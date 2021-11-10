@@ -4,8 +4,10 @@ class CompanyDatabaseError(Exception):
     '''
     
     pass
-global retired_age
+
+global retired_age,min_distance
 retired_age=65
+min_distance=3
 
 class Employee:
 
@@ -16,13 +18,15 @@ class Employee:
 
     raise_amount = 1.5
 
-    def __init__(self, first, last, pay, years_in_company,mob_no=None,age=None):
+    def __init__(self, first, last, pay, years_in_company,mob_no=None,age=None,distance=None):
         self.first = first
         self.last = last
         self.pay = pay
         self.years_in_company = years_in_company
         self.mobile_no=mob_no
         self.age=age
+        self.distance=distance
+    
     @property
     def fullname(self):
         return f"{self.first} {self.last}"
@@ -40,16 +44,25 @@ class Employee:
             return True
         else:
             return False
+    
     def is_correct_mobno(self):
         if len(self.mobile_no)==10:
             return True
         else:
             return False
+    
     def check_retired(self):
         if(self.age>retired_age):
             return True
         else:
             return False
+        
+    def can_get_transportallowance(self):
+        if self.distance > min_distance:
+            return True
+        else:
+            return False
+
 class Manager(Employee):
   '''
   Inherits from Employee class and adds a few methods specific to this class
