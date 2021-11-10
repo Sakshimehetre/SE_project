@@ -8,8 +8,8 @@ class TestEmployeeCreation(unittest.TestCase):
     '''
     Creates re-usable cases for tests that follow
     '''
-    self.emp_1 = Employee("Suresh", "Patil", 30000, 4,'9975403171',66)
-    self.emp_2 = Employee("Neha", "Joshi", 20000, 2,'908834897',35)   
+    self.emp_1 = Employee("Suresh", "Patil", 30000, 4,'9975403171',66,5)
+    self.emp_2 = Employee("Neha", "Joshi", 20000, 2,'908834897',35,2)   
         
   def test_employee_fullname(self):
     '''
