@@ -74,6 +74,12 @@ class TestEmployeeCreation(unittest.TestCase):
     self.assertTrue(age1)
     age2=self.emp_2.check_retired()
     self.assertFalse(age2)
+    
+  def test_can_get_transportallowance(self):
+    TA1=self.emp_1.can_get_transportallowance()
+    self.assertTrue(TA1)
+    TA2=self.emp_2.can_get_transportallowance()
+    self.assertFalse(TA2)
 
 
 if __name__ == "__main__":
